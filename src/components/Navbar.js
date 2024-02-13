@@ -22,7 +22,11 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
+<<<<<<< HEAD
                 <Link className="nav-link " aria-current="page" to="/">
+=======
+                <Link className="nav-link active" aria-current="page" to="/">
+>>>>>>> 7577f1458565af80e7515bd558cb7c08ae2bebbb
                   Home
                 </Link>
               </li>
@@ -31,11 +35,14 @@ export default function Navbar() {
                   Login
                 </Link>
               </li>
+<<<<<<< HEAD
               <li className="nav-item">
                 <Link className="nav-link" to="/signup">
                   SignUp
                 </Link>
               </li>
+=======
+>>>>>>> 7577f1458565af80e7515bd558cb7c08ae2bebbb
             </ul>
           </div>
         </div>
