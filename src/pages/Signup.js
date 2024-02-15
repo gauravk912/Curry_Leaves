@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 export default function Signup() {
@@ -10,9 +10,10 @@ export default function Signup() {
     password: "",
     geolocation: "",
   });
+  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = fetch("http://localhost:4000/api/creatuser", {
+    const response = await fetch("http://localhost:4000/api/creatuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,11 +25,13 @@ export default function Signup() {
         location: credentials.geolocation,
       }),
     });
-    // const json = await response.json;
-    // console.log(json);
-    // if (!json.success) {
-    //   alert("Enter valid credentials");
-    // }
+    const json = await response.json();
+    console.log(json);
+    if (json.success) {
+      navigate('/')
+    } else {
+      alert("Enter Valid Credentials");
+    }
   };
 
   const onChange = (e) => {
@@ -98,8 +101,8 @@ export default function Signup() {
             <input
               type="text"
               className="form-control"
-              value={credentials.geolocation}
-              onChange={onChange}
+              // value={credentials.geolocation}
+              // onChange={onChange}
               name="geolocation"
             />
           </div>
