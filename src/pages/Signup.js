@@ -3,14 +3,16 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
+
 export default function Signup() {
+  let navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
     password: "",
     geolocation: "",
   });
-  let navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:4000/api/creatuser", {
@@ -28,7 +30,7 @@ export default function Signup() {
     const json = await response.json();
     console.log(json);
     if (json.success) {
-      navigate('/')
+      navigate("/");
     } else {
       alert("Enter Valid Credentials");
     }
