@@ -6,10 +6,12 @@ const mongoDB = async () => {
   try {
     await mongoose.connect(url);
     console.log("Connected to MongoDB");
-    let fetched_data = mongoose.connection.db.collection("foodCategory");
+    let fetched_data = mongoose.connection.db.collection("food_items");
     let data = await fetched_data.find({}).toArray();
     global.food_items = data
     const foodCategory = await mongoose.connection.db.collection ("foodCategory");
+    let catData = await foodCategory.find({}).toArray();
+    global.foodCategory =catData;
     // console.log(global.food_items);
     // console.log(data);
   } catch (error) {
