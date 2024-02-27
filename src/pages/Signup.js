@@ -55,7 +55,7 @@ export default function Signup() {
 
       <div className="container">
         <form
-          className="w-50 m-auto mt-5 border bg-dark border-success rounded"
+          className="w-50 m-auto mt-5 border bg-light border-success rounded"
           onSubmit={handleSubmit}
         >
           <div className="m-3">
