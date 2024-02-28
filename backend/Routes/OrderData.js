@@ -19,15 +19,16 @@ router.post("/orderData", async (req, res) => {
       console.log(error.message);
       res.send("Server Error", error - message);
     }
-  }
-  else {
+  } else {
     try {
-        await Order.findOneAndUpdate({email: req.body.email },
-            { $push: { order_data: data } }).then(() => {
-                res. json({ success: true })
-            })
-        }catch (error) {
-            res. send("Server Error", error.message)
-        }
+      await Order.findOneAndUpdate(
+        { email: req.body.email },
+        { $push: { order_data: data } }
+      ).then(() => {
+        res.json({ success: true });
+      });
+    } catch (error) {
+      res.send("Server Error", error.message);
+    }
   }
 });
