@@ -145,10 +145,11 @@ export default function () {
                           >
                             {console.log(filterItems.url)}
                             <Card
-                              foodName={filterItems.name}
-                              item={filterItems}
+                              foodItem ={filterItems}
+                              // foodName={filterItems.name}
+                              // item={filterItems}
                               options={filterItems.options[0]}
-                              ImgSrc={filterItems.img}
+                              // ImgSrc={filterItems.img}
                             ></Card>
                           </div>
                         );
