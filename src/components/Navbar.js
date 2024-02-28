@@ -29,7 +29,7 @@ export default function Navbar(props) {
         style={{
           boxShadow: "0px 10px 20px black",
           filter: "blur(20)",
-          position: "fixed",
+          // position: "fixed",
           zIndex: "10",
           width: "100%",
         }}

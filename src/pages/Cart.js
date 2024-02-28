@@ -14,7 +14,7 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await fetch("http://localhost:4000/api/auth/orderData", {
+    let response = await fetch("http://localhost:4000/api/orderData", { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -34,7 +34,6 @@ export default function Cart() {
   let totalPrice = data.reduce((total, food) => total + food.price, 0)
   return (
     <div>
-
       {console.log(data)}
       <div className='text-white container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md' >
         <table className='table '>
