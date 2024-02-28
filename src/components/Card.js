@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatchCart, useCart } from "./ContextReducer";
+import { Link } from "react-router-dom";
 
 export default function Card(props) {
   let data = useCart();
@@ -118,12 +119,12 @@ export default function Card(props) {
               <div className="d-inline fs-5 p-3 m-2 fw-bold">RS{finalPrice}/-</div>
           </div>
           <hr></hr>
-          <button
+          <Link
             className={`btn btn-success justify-center ms-2`}
             onClick={handleAddToCart}
           >
             Add To Cart
-          </button>
+          </Link>
         </div>
       </div>
     </div>
