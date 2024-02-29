@@ -66,7 +66,7 @@ export default function Navbar(props) {
                   <Link
                     className="nav-link fs-5 mx-3 active"
                     aria-current="page"
-                    to="/myorder"
+                    to="/myOrder"
                   >
                     My Orders
                   </Link>{" "}
